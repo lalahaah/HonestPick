@@ -69,14 +69,20 @@ export default function CategoryTicker() {
 
       <style>{`
         @keyframes ticker {
-          0%   { transform: translateX(0); }
-          100% { transform: translateX(-33.333%); }
+          0%   { transform: translate3d(0, 0, 0); }
+          100% { transform: translate3d(-33.333%, 0, 0); }
         }
         .ticker-track {
           animation: ticker 30s linear infinite;
+          will-change: transform;
         }
         .ticker-track:hover {
           animation-play-state: paused;
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .ticker-track {
+            animation-play-state: paused;
+          }
         }
       `}</style>
     </div>
