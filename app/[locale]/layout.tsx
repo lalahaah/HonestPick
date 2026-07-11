@@ -43,10 +43,11 @@ export const metadata: Metadata = {
 
 type Props = {
   children: React.ReactNode;
+  modal: React.ReactNode;
   params: Promise<{ locale: string }>;
 };
 
-export default async function LocaleLayout({ children, params }: Props) {
+export default async function LocaleLayout({ children, modal, params }: Props) {
   const { locale } = await params;
 
   // 지원하지 않는 로케일이면 404
@@ -62,6 +63,7 @@ export default async function LocaleLayout({ children, params }: Props) {
       <body>
         <NextIntlClientProvider messages={messages}>
           {children}
+          {modal}
         </NextIntlClientProvider>
       </body>
     </html>
