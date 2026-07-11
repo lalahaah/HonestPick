@@ -1,0 +1,189 @@
+@import "tailwindcss";
+
+/* ============================================================
+   HonestPick Design Tokens — design.md §2 기준
+   Tailwind v4: @theme 블록에 CSS 변수를 등록해 Tailwind 유틸리티로 사용
+   임의 hex 코드 금지 — 이 파일의 토큰 값만 사용
+   ============================================================ */
+
+:root {
+  /* Color Tokens */
+  --ink:          #14120F;  /* 텍스트, 헤더 배경 */
+  --ink-soft:     #57534A;  /* 보조 텍스트 */
+  --paper:        #FBF8F3;  /* 섹션 배경 */
+  --surface:      #FFFFFF;  /* 카드 배경 */
+  --border:       #E8E3DA;  /* 카드 테두리, 구분선 */
+  --accent:       #F0532E;  /* 코랄 오렌지 — 포인트 컬러 */
+  --accent-soft:  #FDEDE7;  /* 배지, 하이라이트 배경 */
+  --good:         #1E7A4C;  /* 장점 체크 */
+  --bad:          #C23B4C;  /* 단점 마커 */
+  --star:         #F0532E;  /* 별점 — accent 재사용 */
+
+  /* Font Tokens */
+  --font-display: var(--font-fraunces), Georgia, serif;
+  --font-body:    var(--font-inter), system-ui, sans-serif;
+
+  /* Shadow Tokens */
+  --shadow-card:  0 1px 2px rgba(20,18,15,.04), 0 8px 24px rgba(20,18,15,.06);
+  --shadow-hover: 0 16px 32px rgba(20,18,15,.10);
+}
+
+/* ============================================================
+   Tailwind v4 Theme — CSS 변수를 Tailwind 유틸리티로 등록
+   예: bg-ink, text-accent, border-border 등
+   ============================================================ */
+@theme inline {
+  /* Colors */
+  --color-ink:          var(--ink);
+  --color-ink-soft:     var(--ink-soft);
+  --color-paper:        var(--paper);
+  --color-surface:      var(--surface);
+  --color-border:       var(--border);
+  --color-accent:       var(--accent);
+  --color-accent-soft:  var(--accent-soft);
+  --color-good:         var(--good);
+  --color-bad:          var(--bad);
+  --color-star:         var(--star);
+
+  /* Fonts */
+  --font-display: var(--font-display);
+  --font-body:    var(--font-body);
+  --font-sans:    var(--font-body);
+
+  /* Border Radius */
+  --radius-card:   16px;
+  --radius-pill:   9999px;
+
+  /* Spacing scale: 4px base — design.md §2 */
+  --spacing-1:  4px;
+  --spacing-2:  8px;
+  --spacing-3:  12px;
+  --spacing-4:  16px;
+  --spacing-6:  24px;
+  --spacing-8:  32px;
+  --spacing-12: 48px;
+  --spacing-16: 64px;
+  --spacing-24: 96px;
+}
+
+/* ============================================================
+   Base Styles
+   ============================================================ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px; /* 1rem = 16px — design.md §2 타이포 스케일 기준 */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  line-height: 1.6;
+}
+
+/* ============================================================
+   Typography Scale — design.md §2 기준
+   ============================================================ */
+
+/* Display XL: 히어로 H1 */
+.text-display-xl {
+  font-family: var(--font-display);
+  font-size: 3.5rem;
+  line-height: 1.05;
+  font-weight: 600;
+}
+
+/* Display L: 섹션 타이틀 */
+.text-display-l {
+  font-family: var(--font-display);
+  font-size: 2.25rem;
+  line-height: 1.1;
+  font-weight: 600;
+}
+
+/* Display M: 제품명, 카드 타이틀 */
+.text-display-m {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  line-height: 1.2;
+  font-weight: 500;
+}
+
+/* Body L */
+.text-body-l {
+  font-family: var(--font-body);
+  font-size: 1.125rem;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+/* Body */
+.text-body {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+/* Small: 메타, 캡션 */
+.text-small {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+/* Micro: 배지, 라벨 */
+.text-micro {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  line-height: 1.4;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+/* ============================================================
+   Card & Shadow Utilities
+   ============================================================ */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: var(--shadow-card);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-4px);
+}
+
+/* ============================================================
+   Focus Ring — 접근성 필수 (삭제 금지, design.md §5)
+   ============================================================ */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* ============================================================
+   Scrollbar (Webkit)
+   ============================================================ */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--paper);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 999px;
+}

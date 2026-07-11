@@ -1,0 +1,97 @@
+{
+  "site": {
+    "name": "HonestPick",
+    "tagline": "Hands-on tested, not sponsored.",
+    "description": "Honest, in-depth product reviews based on real-world testing. No paid placements — just straightforward picks to help you buy smarter."
+  },
+  "nav": {
+    "seeThisWeeksPicks": "See This Week's Picks",
+    "tech": "Tech",
+    "beauty": "K-Beauty"
+  },
+  "hero": {
+    "badge": "Hands-on tested, not sponsored",
+    "heading": "Reviews you can",
+    "headingHighlight": "actually trust.",
+    "subheading": "We buy, test, and write — no affiliate pressure, no fake reviews. Just honest picks for smarter shopping.",
+    "cta": "Explore Reviews",
+    "stats": {
+      "reviews": "120+ Reviews",
+      "rating": "4.7 Avg Rating",
+      "categories": "2 Core Categories"
+    }
+  },
+  "categories": {
+    "title": "Browse by Category",
+    "tech": {
+      "name": "Tech & Gadgets",
+      "description": "Headphones, cables, chargers — tested for real-world use"
+    },
+    "beauty": {
+      "name": "K-Beauty",
+      "description": "Skincare that actually works, not just hype"
+    },
+    "browseLink": "Browse reviews →"
+  },
+  "bestPicks": {
+    "title": "This Week's Best Picks",
+    "filterAll": "All",
+    "filterTech": "Tech",
+    "filterBeauty": "K-Beauty"
+  },
+  "process": {
+    "title": "How We Pick",
+    "steps": [
+      {
+        "number": "01",
+        "title": "We Buy It",
+        "description": "Every product is purchased at full retail price — no gifted samples, no brand relationships."
+      },
+      {
+        "number": "02",
+        "title": "We Test It",
+        "description": "Minimum 2 weeks of real-world use before writing a single word of review."
+      },
+      {
+        "number": "03",
+        "title": "We Write Honestly",
+        "description": "Pros, cons, and verdict — including the parts brands wouldn't want you to know."
+      }
+    ]
+  },
+  "newsletter": {
+    "title": "Get Honest Picks in Your Inbox",
+    "subtitle": "New reviews every week. No spam. Unsubscribe anytime.",
+    "placeholder": "your@email.com",
+    "cta": "Subscribe",
+    "privacy": "No spam. Unsubscribe anytime."
+  },
+  "footer": {
+    "tagline": "Honest reviews. Real testing. No fluff.",
+    "ftcDisclosure": "As an Amazon Associate, HonestPick earns from qualifying purchases.",
+    "categories": "Categories",
+    "company": "Company",
+    "legal": "Legal",
+    "links": {
+      "about": "About Us",
+      "contact": "Contact",
+      "privacyPolicy": "Privacy Policy",
+      "termsOfService": "Terms of Service",
+      "ftcDisclosure": "FTC Disclosure",
+      "tech": "Tech & Gadgets",
+      "beauty": "K-Beauty"
+    }
+  },
+  "review": {
+    "checkPriceOnAmazon": "Check Price on Amazon",
+    "priceDisclaimer": "Price as of {date}. As an Amazon Associate we earn from qualifying purchases.",
+    "pros": "Pros",
+    "cons": "Cons",
+    "verdict": "Our Verdict",
+    "relatedProducts": "You Might Also Like",
+    "testedFor": "Tested for {duration}"
+  },
+  "buyBox": {
+    "cta": "Check Price on Amazon"
+  }
+}
