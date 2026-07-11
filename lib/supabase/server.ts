@@ -3,7 +3,7 @@ import { cookies } from "next/headers";
 import type { Database } from "./types";
 
 /**
- * 서버 전용 Supabase 클라이언트
+ * 서버 전용 Supabase 클라이언트 팩토리
  * service_role 키 사용 → RLS 무시, 모든 테이블 접근 가능
  *
  * ⚠️  이 파일은 서버 컴포넌트 / Route Handler에서만 import할 것
@@ -14,7 +14,7 @@ export async function createSupabaseServerClient() {
 
   return createServerClient<Database>(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    // TODO(security): 서버 전용 — service_role 키는 .env.local에만 보관
+    // TODO(security): 서버 전용 — service_role 키는 .env.local에만 보관, 절대 클라이언트 노출 금지
     process.env.SUPABASE_SERVICE_ROLE_KEY!,
     {
       cookies: {
