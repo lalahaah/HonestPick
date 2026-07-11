@@ -10,6 +10,7 @@ import ImageGallery from '@/components/ImageGallery';
 import PullQuote from '@/components/PullQuote';
 import ProsConsCard from '@/components/ProsConsCard';
 import ProductCard from '@/components/ProductCard';
+import ReactMarkdown from 'react-markdown';
 
 type Props = {
   params: Promise<{ locale: string; slug: string }>;
@@ -88,15 +89,20 @@ export default async function ReviewPage({ params }: Props) {
 
               <PullQuote quote={product.subtitle_en || "An excellent choice."} rating={product.rating || 5} />
 
-              <div style={{ fontSize: '1.125rem', lineHeight: 1.6, color: 'var(--ink)', marginBottom: '48px' }}>
-                <p style={{ marginBottom: '16px' }}>
-                  We put the {product.title_en} through rigorous real-world testing. 
-                  Unlike other review sites that simply reword Amazon descriptions, we actually used this product daily to understand its true strengths and weaknesses.
-                </p>
-                <p>
-                  Our verdict? It stands out in its category, though there are a few things you should know before buying.
-                </p>
+              <div className="review-body" style={{ fontSize: '1.125rem', lineHeight: 1.6, color: 'var(--ink)', marginBottom: '48px' }}>
+                <ReactMarkdown>
+                  {product.body_en || ""}
+                </ReactMarkdown>
               </div>
+
+              <style>{`
+                .review-body p { margin-bottom: 16px; }
+                .review-body h2, .review-body h3 { font-family: var(--font-display); margin: 32px 0 16px; font-weight: 600; color: var(--ink); }
+                .review-body h2 { font-size: 1.75rem; }
+                .review-body h3 { font-size: 1.25rem; }
+                .review-body ul { margin-bottom: 16px; padding-left: 24px; list-style-type: disc; }
+                .review-body li { margin-bottom: 8px; }
+              `}</style>
 
               <ProsConsCard pros={product.pros || []} cons={product.cons || []} />
 

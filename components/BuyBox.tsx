@@ -123,6 +123,7 @@ export default function BuyBox({ product }: Props) {
         @media (max-width: 767px) {
           .buy-box-wrapper {
             position: fixed;
+            top: auto;
             bottom: 0;
             left: 0;
             right: 0;
