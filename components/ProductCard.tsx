@@ -141,27 +141,31 @@ export default function ProductCard({ product }: Props) {
         {/* 장점 태그 2개 */}
         {proTags.length > 0 && (
           <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap', marginTop: '8px' }}>
-            {proTags.map((pro, i) => (
-              <span
-                key={i}
-                style={{
-                  fontSize: '0.7rem',
-                  fontWeight: 500,
-                  color: 'var(--good)',
-                  border: '1px solid var(--good)',
-                  borderRadius: '9999px',
-                  padding: '3px 10px',
-                  lineHeight: 1.4,
-                  display: '-webkit-box',
-                  WebkitLineClamp: 1,
-                  WebkitBoxOrient: 'vertical',
-                  overflow: 'hidden',
-                  maxWidth: '160px',
-                }}
-              >
-                ✓ {pro}
-              </span>
-            ))}
+            {proTags.map((pro, i) => {
+              const words = pro.split(' ');
+              const truncatedPro = words.length > 4 ? words.slice(0, 4).join(' ') + '...' : pro;
+              return (
+                <span
+                  key={i}
+                  title={pro}
+                  style={{
+                    fontSize: '0.7rem',
+                    fontWeight: 500,
+                    color: 'var(--good)',
+                    border: '1px solid var(--good)',
+                    borderRadius: '9999px',
+                    padding: '3px 10px',
+                    lineHeight: 1.4,
+                    whiteSpace: 'nowrap',
+                    overflow: 'hidden',
+                    textOverflow: 'ellipsis',
+                    maxWidth: '100%',
+                  }}
+                >
+                  ✓ {truncatedPro}
+                </span>
+              );
+            })}
           </div>
         )}
       </div>
