@@ -99,12 +99,10 @@ export default function Footer() {
                     href={link.href}
                     style={{
                       fontSize: '0.875rem',
-                      color: 'rgba(255,255,255,0.6)',
                       textDecoration: 'none',
                       transition: 'color 0.15s ease',
                     }}
-                    onMouseEnter={e => ((e.target as HTMLElement).style.color = '#FFFFFF')}
-                    onMouseLeave={e => ((e.target as HTMLElement).style.color = 'rgba(255,255,255,0.6)')}
+                    className="text-white/60 hover:text-white"
                   >
                     {link.label}
                   </Link>
@@ -137,12 +135,10 @@ export default function Footer() {
                     href={link.href}
                     style={{
                       fontSize: '0.875rem',
-                      color: 'rgba(255,255,255,0.6)',
                       textDecoration: 'none',
                       transition: 'color 0.15s ease',
                     }}
-                    onMouseEnter={e => ((e.target as HTMLElement).style.color = '#FFFFFF')}
-                    onMouseLeave={e => ((e.target as HTMLElement).style.color = 'rgba(255,255,255,0.6)')}
+                    className="text-white/60 hover:text-white"
                   >
                     {link.label}
                   </Link>
@@ -176,12 +172,10 @@ export default function Footer() {
                     href={link.href}
                     style={{
                       fontSize: '0.875rem',
-                      color: 'rgba(255,255,255,0.6)',
                       textDecoration: 'none',
                       transition: 'color 0.15s ease',
                     }}
-                    onMouseEnter={e => ((e.target as HTMLElement).style.color = '#FFFFFF')}
-                    onMouseLeave={e => ((e.target as HTMLElement).style.color = 'rgba(255,255,255,0.6)')}
+                    className="text-white/60 hover:text-white"
                   >
                     {link.label}
                   </Link>

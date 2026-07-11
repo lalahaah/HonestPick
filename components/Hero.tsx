@@ -103,8 +103,7 @@ export default function Hero() {
               marginBottom: '48px',
               transition: 'opacity 0.15s ease',
             }}
-            onMouseEnter={e => ((e.target as HTMLAnchorElement).style.opacity = '0.85')}
-            onMouseLeave={e => ((e.target as HTMLAnchorElement).style.opacity = '1')}
+            className="hover:opacity-85"
           >
             Explore Reviews
           </Link>

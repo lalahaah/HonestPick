@@ -1,4 +1,3 @@
-'use client';
 
 // design.md §3.1: 무한 마퀴, 좌우 mask-image 페이드, hover 시 정지
 export default function CategoryTicker() {

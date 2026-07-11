@@ -60,7 +60,6 @@ export default function Navbar() {
           <Link
             href="/en/category/tech"
             style={{
-              color: 'rgba(255,255,255,0.7)',
               fontSize: '0.875rem',
               fontWeight: 500,
               textDecoration: 'none',
@@ -68,15 +67,13 @@ export default function Navbar() {
               borderRadius: '9999px',
               transition: 'color 0.15s ease',
             }}
-            onMouseEnter={e => ((e.target as HTMLElement).style.color = '#FFFFFF')}
-            onMouseLeave={e => ((e.target as HTMLElement).style.color = 'rgba(255,255,255,0.7)')}
+            className="text-white/70 hover:text-white"
           >
             Tech
           </Link>
           <Link
             href="/en/category/k-beauty"
             style={{
-              color: 'rgba(255,255,255,0.7)',
               fontSize: '0.875rem',
               fontWeight: 500,
               textDecoration: 'none',
@@ -84,8 +81,7 @@ export default function Navbar() {
               borderRadius: '9999px',
               transition: 'color 0.15s ease',
             }}
-            onMouseEnter={e => ((e.target as HTMLElement).style.color = '#FFFFFF')}
-            onMouseLeave={e => ((e.target as HTMLElement).style.color = 'rgba(255,255,255,0.7)')}
+            className="text-white/70 hover:text-white"
           >
             K-Beauty
           </Link>
@@ -102,8 +98,7 @@ export default function Navbar() {
               borderRadius: '9999px',
               transition: 'opacity 0.15s ease',
             }}
-            onMouseEnter={e => ((e.target as HTMLElement).style.opacity = '0.85')}
-            onMouseLeave={e => ((e.target as HTMLElement).style.opacity = '1')}
+            className="hover:opacity-85"
           >
             See This Week&apos;s Picks
           </Link>
