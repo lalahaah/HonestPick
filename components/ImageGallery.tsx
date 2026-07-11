@@ -16,6 +16,7 @@ export default function ImageGallery({ title }: { title: string }) {
           color: 'rgba(0,0,0,0.1)',
           marginBottom: '16px',
         }}
+        role="img"
         aria-label={`${title} main image`}
       >
         📸
@@ -41,6 +42,7 @@ export default function ImageGallery({ title }: { title: string }) {
               transition: 'opacity 0.2s',
             }}
             className="hover:opacity-100"
+            role="img"
             aria-label={`${title} thumbnail ${i}`}
           />
         ))}

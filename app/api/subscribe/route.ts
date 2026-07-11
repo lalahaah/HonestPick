@@ -14,6 +14,7 @@ export async function POST(request: Request) {
     // Insert into subscribers
     const { error } = await supabase
       .from('subscribers')
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       .insert({ email, source: source || 'newsletter_form' } as any);
 
     if (error) {

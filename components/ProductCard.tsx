@@ -54,6 +54,7 @@ export default function ProductCard({ product }: Props) {
             transition: 'transform 0.3s ease',
           }}
           className="card-img"
+          role="img"
           aria-label={title_en}
         >
           {category?.slug === 'tech' ? '🎧' : '✨'}

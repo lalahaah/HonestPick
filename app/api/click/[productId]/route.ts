@@ -35,6 +35,7 @@ export async function GET(
     referrer: referer,
     country: country,
     session_id: sessionId,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   } as any);
 
   // 3. Redirect to Amazon

@@ -134,8 +134,7 @@ export async function getProducts(
     ...new Set((products as any[]).map((p: any) => p.category_id).filter(Boolean)),
   ] as string[];
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  let catMap: Record<string, Pick<Category, "slug" | "name_en">> = {};
+  const catMap: Record<string, Pick<Category, "slug" | "name_en">> = {};
   if (catIds.length > 0) {
     const { data: cats } = await supabase
       .from("categories")
@@ -178,7 +177,6 @@ export async function getProductBySlug(
   if (!product) return null;
 
   // category 정보 조회
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   let category: Pick<Category, "slug" | "name_en"> | null = null;
   if (product.category_id) {
     const { data: catRows } = await supabase
@@ -210,6 +208,23 @@ export async function getAllProductSlugs(): Promise<string[]> {
   }
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   return (data as any[] ?? []).map((p: any) => p.slug as string);
+}
+
+/**
+ * 전체 category slug 목록 — generateStaticParams/sitemap용
+ */
+export async function getAllCategorySlugs(): Promise<string[]> {
+  const supabase = await createSupabaseServerClient();
+  const { data, error } = await supabase
+    .from("categories")
+    .select("slug");
+
+  if (error) {
+    console.error("[getAllCategorySlugs]", error.message);
+    return [];
+  }
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  return (data as any[] ?? []).map((c: any) => c.slug as string);
 }
 
 /**

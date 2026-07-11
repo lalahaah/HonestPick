@@ -19,6 +19,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${category.name_en} Reviews`,
     description: `Honest, hands-on reviews of the best ${category.name_en}.`,
+    openGraph: {
+      title: `${category.name_en} Reviews | HonestPick`,
+      description: `Honest, hands-on reviews of the best ${category.name_en}.`,
+      url: `https://honestpickhq.com/en/category/${slug}`,
+    },
   };
 }
 

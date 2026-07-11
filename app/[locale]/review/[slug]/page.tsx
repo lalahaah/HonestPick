@@ -29,6 +29,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${product.title_en} Review`,
     description: product.subtitle_en || `Honest review of ${product.title_en}.`,
+    openGraph: {
+      title: `${product.title_en} Review | HonestPick`,
+      description: product.subtitle_en || `Honest review of ${product.title_en}.`,
+      url: `https://honestpickhq.com/en/review/${slug}`,
+      images: product.image_urls?.[0] ? [{ url: product.image_urls[0] }] : [],
+    },
   };
 }
 
@@ -69,7 +75,7 @@ export default async function ReviewPage({ params }: Props) {
             <article>
               <div style={{ marginBottom: '24px' }}>
                 {product.category && <Badge variant="category">{product.category.name_en}</Badge>}
-                {product.badge && <span style={{ marginLeft: '8px' }}><Badge variant={product.badge as any}>{product.badge}</Badge></span>}
+                {product.badge && <span style={{ marginLeft: '8px' }}><Badge variant={product.badge as "Editor's Pick" | "Best Value" | "Bestseller"}>{product.badge}</Badge></span>}
               </div>
 
               <h1 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(2rem, 4vw, 2.5rem)', fontWeight: 600, color: 'var(--ink)', lineHeight: 1.1, marginBottom: '16px' }}>
@@ -121,9 +127,10 @@ export default async function ReviewPage({ params }: Props) {
                 Related Products
               </h2>
               <div className="related-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '24px' }}>
-                {relatedProducts.map(p => (
-                  <ProductCard key={p.id} product={p as any} />
-                ))}
+                {relatedProducts.map(p => {
+                  const typedProduct = p as import("@/lib/supabase/types").Product & { category?: { slug: string; name_en: string } | null };
+                  return <ProductCard key={p.id} product={typedProduct} />;
+                })}
               </div>
             </section>
           )}

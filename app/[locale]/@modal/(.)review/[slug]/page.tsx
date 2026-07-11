@@ -24,7 +24,7 @@ export default async function ReviewModal({ params }: Props) {
         <div style={{ paddingRight: '16px' }}>
           <div style={{ marginBottom: '16px' }}>
             {product.category && <Badge variant="category">{product.category.name_en}</Badge>}
-            {product.badge && <span style={{ marginLeft: '8px' }}><Badge variant={product.badge as any}>{product.badge}</Badge></span>}
+            {product.badge && <span style={{ marginLeft: '8px' }}><Badge variant={product.badge as "Editor's Pick" | "Best Value" | "Bestseller"}>{product.badge}</Badge></span>}
           </div>
           
           <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '2rem', fontWeight: 600, color: 'var(--ink)', lineHeight: 1.1, marginBottom: '16px' }}>
