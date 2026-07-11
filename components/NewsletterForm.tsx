@@ -6,6 +6,7 @@ import { useState, type FormEvent } from 'react';
 export default function NewsletterForm() {
   const [email, setEmail] = useState('');
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [message, setMessage] = useState<string>('');
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -17,14 +18,18 @@ export default function NewsletterForm() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, source: 'homepage_footer' }),
       });
+      const data = await res.json();
       if (res.ok) {
         setStatus('success');
+        setMessage(data.message || "✓ You're in! Check your inbox for a confirmation.");
         setEmail('');
       } else {
         setStatus('error');
+        setMessage(data.error || 'Something went wrong.');
       }
     } catch {
       setStatus('error');
+      setMessage('Something went wrong.');
     }
   }
 
@@ -94,7 +99,7 @@ export default function NewsletterForm() {
               fontSize: '0.9375rem',
             }}
           >
-            ✓ You&apos;re in! Check your inbox for a confirmation.
+            {message}
           </div>
         ) : (
           <form
@@ -150,7 +155,7 @@ export default function NewsletterForm() {
 
         {status === 'error' && (
           <p role="alert" style={{ color: '#FC8181', fontSize: '0.875rem', marginTop: '8px' }}>
-            Something went wrong. Please try again.
+            {message}
           </p>
         )}
 
