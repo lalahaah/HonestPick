@@ -107,7 +107,7 @@
 
 **콘텐츠 영역 (좌)**:
 1. 브레드크럼 + 카테고리 배지
-2. 제품명(Display XL, Fraunces) + "Tested for 2 weeks" 같은 실사용 기간 마이크로카피 (신뢰 신호, 필수)
+2. 제품명(Display XL, Fraunces) + Review Type Badge (하단 상세 스펙 참조)
 3. 이미지 갤러리 — 메인 이미지 + 하단 썸네일 4개 (기존 단일 이미지에서 확장)
 4. 한줄평 Pull-quote 박스 — 기존 모달의 "한줄평" 그대로, 따옴표 아이콘 + 별점 큰 사이즈로 강조 (surface 카드, accent 좌측 보더 4px)
 5. Product Description 본문
@@ -123,6 +123,11 @@
 **모달 변형 (리스트에서 클릭 시, 인터셉팅 라우트)**: 위 레이아웃을 그대로 `max-width: 960px` 오버레이 카드에 담음. 배경 `rgba(20,18,15,.6)` + blur. 우상단 X 버튼, ESC로 닫힘, 닫으면 이전 URL(리스트)로 복귀. **단, 실제 URL은 `/en/review/[slug]`로 바뀌어 있어야 함** (직전 대화에서 확정한 SEO 요건).
 
 **모바일 (<768px)**: 모달 오버레이 방식 대신 **풀페이지로 전환** (오버레이는 모바일에서 스크롤/제스처 충돌 유발). Buy Box는 스티키 사이드바 대신 **하단 고정 바**(가격 + CTA만, `position: fixed; bottom: 0`)로 축소.
+
+**Review Type Badge 컴포넌트 스펙**:
+두 배지는 같은 슬롯(제품명 아래)에 조건부 렌더링
+- hands_on: 기존 "Tested for X weeks" 배지 그대로 (accent-soft 배경)
+- researched: "Researched Pick" 배지 (배경 var(--border), 텍스트 var(--ink-soft), 동일 pill shape)
 
 ---
 

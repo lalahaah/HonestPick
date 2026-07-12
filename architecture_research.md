@@ -63,6 +63,9 @@ create table products (
   id uuid primary key default gen_random_uuid(),
   slug text unique not null,          -- 'noise-cancelling-headphones'
   category_id uuid references categories(id),
+  review_type text,                   -- 'hands_on' | 'researched'
+  tested_duration text,
+  research_basis text,
   title_en text not null,
   subtitle_en text,
   one_liner_en text,                  -- 모달의 "한줄평"
