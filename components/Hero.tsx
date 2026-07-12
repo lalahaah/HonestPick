@@ -1,4 +1,6 @@
 import Link from 'next/link';
+import Image from 'next/image';
+import heroImg from '../public/images/hero-flatlay.jpg';
 
 // design.md §3.1 Hero 스펙 기반
 // 좌측 텍스트 + 우측 이미지 플레이스홀더, 글래스모프 배지
@@ -156,26 +158,30 @@ export default function Hero() {
           }}
           className="hero-image-col"
         >
-          {/* 제품 이미지 플레이스홀더 */}
+          {/* 제품 이미지 */}
           <div
             style={{
+              position: 'relative',
               width: '100%',
               aspectRatio: '4/5',
-              background: 'linear-gradient(135deg, rgba(240,83,46,0.15) 0%, rgba(240,83,46,0.05) 100%)',
               borderRadius: '24px 24px 0 0',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
+              overflow: 'hidden',
               border: '1px solid rgba(255,255,255,0.08)',
               borderBottom: 'none',
+              backgroundColor: 'rgba(255,255,255,0.05)',
             }}
           >
-            <div style={{ textAlign: 'center', color: 'rgba(255,255,255,0.3)' }}>
-              <div style={{ fontSize: '4rem' }}>📦</div>
-              <div style={{ fontSize: '0.875rem', marginTop: '8px' }}>
-                Product flatlay photo
-              </div>
-            </div>
+            <Image
+              src={heroImg}
+              alt="Tech gadgets flatlay photography"
+              fill
+              style={{
+                objectFit: 'cover',
+                objectPosition: 'center',
+              }}
+              priority
+              placeholder="blur"
+            />
           </div>
 
           {/* Glassmorphism 배지 — 이미지 위 우상단 */}
