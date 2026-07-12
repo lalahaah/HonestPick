@@ -3,9 +3,11 @@ import type { Product } from '@/lib/supabase/types';
 type Props = {
   pros: NonNullable<Product['pros']>;
   cons: NonNullable<Product['cons']>;
+  reviewType?: string;
+  researchBasis?: string | null;
 };
 
-export default function ProsConsCard({ pros, cons }: Props) {
+export default function ProsConsCard({ pros, cons, reviewType, researchBasis }: Props) {
   if (!pros?.length && !cons?.length) return null;
 
   return (
@@ -97,6 +99,12 @@ export default function ProsConsCard({ pros, cons }: Props) {
           ))}
         </ul>
       </div>
+
+      {reviewType === 'researched' && researchBasis && (
+        <div style={{ gridColumn: '1 / -1', textAlign: 'center', fontSize: '0.875rem', color: 'var(--ink-soft)' }}>
+          <strong>Based on:</strong> {researchBasis}
+        </div>
+      )}
 
       <style>{`
         @media (max-width: 640px) {

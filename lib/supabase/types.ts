@@ -56,6 +56,9 @@ export interface Database {
           amazon_asin: string;
           amazon_tag: string;
           badge: "Editor's Pick" | "Best Value" | "Bestseller" | null;
+          review_type: "hands_on" | "researched" | null;
+          tested_duration: string | null;
+          research_basis: string | null;
           is_featured: boolean;
           created_at: string;
           updated_at: string;
@@ -76,6 +79,9 @@ export interface Database {
           amazon_asin: string;
           amazon_tag: string;
           badge?: "Editor's Pick" | "Best Value" | "Bestseller" | null;
+          review_type?: "hands_on" | "researched" | null;
+          tested_duration?: string | null;
+          research_basis?: string | null;
           is_featured?: boolean;
           created_at?: string;
           updated_at?: string;
@@ -96,6 +102,9 @@ export interface Database {
           amazon_asin?: string;
           amazon_tag?: string;
           badge?: "Editor's Pick" | "Best Value" | "Bestseller" | null;
+          review_type?: "hands_on" | "researched" | null;
+          tested_duration?: string | null;
+          research_basis?: string | null;
           is_featured?: boolean;
           created_at?: string;
           updated_at?: string;

@@ -1,7 +1,7 @@
 // Server Component — 제품 등급 배지
 // design.md §2: full pill, accent-soft 배경
 
-type BadgeVariant = "Editor's Pick" | 'Best Value' | 'Bestseller' | 'category';
+type BadgeVariant = "Editor's Pick" | 'Best Value' | 'Bestseller' | 'category' | 'hands-on' | 'researched';
 
 type Props = {
   variant: BadgeVariant;
@@ -28,6 +28,14 @@ const variantStyles: Record<BadgeVariant, React.CSSProperties> = {
     color: 'var(--ink)',
     backdropFilter: 'blur(8px)',
     WebkitBackdropFilter: 'blur(8px)',
+  },
+  'hands-on': {
+    backgroundColor: 'var(--accent-soft)',
+    color: 'var(--accent)',
+  },
+  'researched': {
+    backgroundColor: 'var(--border)',
+    color: 'var(--ink-soft)',
   },
 };
 

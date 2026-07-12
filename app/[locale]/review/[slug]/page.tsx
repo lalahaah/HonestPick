@@ -83,9 +83,11 @@ export default async function ReviewPage({ params }: Props) {
               </h1>
 
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '32px' }}>
-                <span style={{ fontSize: '0.875rem', fontWeight: 600, color: 'var(--accent)', backgroundColor: 'var(--accent-soft)', padding: '4px 12px', borderRadius: '9999px' }}>
-                  Tested for 2+ weeks
-                </span>
+                {product.review_type === 'hands_on' ? (
+                  <Badge variant="hands-on">Tested for {product.tested_duration || '2+ weeks'}</Badge>
+                ) : (
+                  <Badge variant="researched">Researched Pick</Badge>
+                )}
                 <span style={{ fontSize: '0.875rem', color: 'var(--ink-soft)' }}>
                   By HonestPick Editorial
                 </span>
@@ -110,7 +112,12 @@ export default async function ReviewPage({ params }: Props) {
                 .review-body li { margin-bottom: 8px; }
               `}</style>
 
-              <ProsConsCard pros={product.pros || []} cons={product.cons || []} />
+              <ProsConsCard 
+                pros={product.pros || []} 
+                cons={product.cons || []} 
+                reviewType={product.review_type || 'hands_on'}
+                researchBasis={product.research_basis}
+              />
 
             </article>
 

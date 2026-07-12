@@ -12,9 +12,9 @@ const steps = [
   {
     number: '02',
     icon: '🔬',
-    title: 'We Test It',
+    title: 'We Test & Research',
     description:
-      'Minimum 2 weeks of real-world use before writing a single word of review.',
+      'We either test products hands-on for weeks, or synthesize hundreds of verified buyer experiences and manufacturer data.',
   },
   {
     number: '03',

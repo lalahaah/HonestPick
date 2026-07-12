@@ -70,8 +70,8 @@ export default function Footer() {
                 maxWidth: '240px',
               }}
             >
-              Honest reviews. Real testing. No fluff.
-              We buy every product we review — no gifted samples, no sponsor money.
+              Honest reviews. Rigorous testing and research. No fluff.
+              We combine hands-on testing with data-driven analysis — no gifted samples, no sponsor money.
             </p>
           </div>
 

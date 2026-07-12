@@ -46,7 +46,7 @@ export default function Hero() {
             }}
           >
             <span aria-hidden="true">✓</span>
-            Hands-on tested, not sponsored
+            INDEPENDENTLY REVIEWED, NEVER SPONSORED
           </div>
 
           {/* H1 — Display XL, Fraunces */}
@@ -86,8 +86,7 @@ export default function Hero() {
               maxWidth: '480px',
             }}
           >
-            We buy, test, and write — no affiliate pressure, no fake reviews.
-            Just honest picks for smarter shopping.
+            We either test products hands-on for weeks, or synthesize hundreds of verified buyer experiences — no affiliate pressure, no fake reviews. Just honest picks for smarter shopping.
           </p>
 
           {/* CTA */}
