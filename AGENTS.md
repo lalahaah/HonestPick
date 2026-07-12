@@ -87,7 +87,7 @@ AGENTS.md
 ## 6. 하지 말 것 (Do NOT)
 
 - 아마존 ASIN, 가격, 리뷰 본문을 임의로 지어내지 않는다 — 실 데이터 없으면 `TODO: 실제 ASIN 필요` 마킹하고 더미로 표시
-- review_type=researched인 제품에 'tested', 'we bought' 등 실사용을 암시하는 문구 삽입 금지 — research_basis에 명시된 근거로만 서술
+- 앞으로 review_type='researched'로 새 제품 넣을 때는 body_en에 "Tested for X" 류 실사용 문구를 절대 쓰지 말 것 — research_basis 필드에 근거(스펙시트/검증된 리뷰 개수 등)를 명시하고, 본문도 그에 맞게 "Based on manufacturer specs and X verified owner reviews" 톤으로 작성.
 - FTC 고지 문구("As an Amazon Associate, HonestPick earns from qualifying purchases.")를 삭제하거나 축소하지 않는다
 - Vercel Hobby 설정으로 배포하지 않는다 (상업 프로젝트)
 - 리뷰 상세를 모달 전용으로만 구현하지 않는다 — 반드시 고유 URL이 있어야 함 (`/en/review/[slug]`)
