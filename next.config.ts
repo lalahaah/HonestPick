@@ -22,6 +22,11 @@ const nextConfig: NextConfig = {
         hostname: "placeholder.honestpickhq.com",
         pathname: "/**",
       },
+      {
+        protocol: 'https',
+        hostname: 'jyytfqwhssfxbezjgotd.supabase.co',
+        pathname: '/storage/v1/object/public/**',
+      },
     ],
   },
 };
