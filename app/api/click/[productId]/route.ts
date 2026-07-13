@@ -40,7 +40,7 @@ export async function GET(
 
   // 3. Redirect to Amazon
   // TODO: 실제 아마존 어소시에이트 승인 후 태그 반영
-  const amazonTag = process.env.AMAZON_ASSOCIATE_TAG || 'honestpick-20';
+  const amazonTag = process.env.AMAZON_ASSOCIATE_TAG || 'nextidealab-20';
   const amazonUrl = `https://www.amazon.com/dp/${p.amazon_asin}?tag=${amazonTag}`;
 
   return NextResponse.redirect(amazonUrl, 302);

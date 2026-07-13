@@ -22,7 +22,7 @@ INSERT INTO products (
     'Initial slippage for the first 10-15 minutes until it adheres'
   ],
   'B0B2RM68G2',
-  'honestpick-20', 
+  'nextidealab-20', 
   'Bestseller',
   'researched', 
   NULL, 
