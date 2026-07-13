@@ -31,7 +31,7 @@ export default async function ReviewModal({ params }: Props) {
             {product.title_en}
           </h2>
           
-          <ImageGallery title={product.title_en} />
+          <ImageGallery title={product.title_en} image_urls={product.image_urls} />
           
           <PullQuote quote={product.subtitle_en || "Great pick."} rating={product.rating || 5} />
           

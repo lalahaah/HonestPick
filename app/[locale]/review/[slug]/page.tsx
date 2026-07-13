@@ -93,7 +93,7 @@ export default async function ReviewPage({ params }: Props) {
                 </span>
               </div>
 
-              <ImageGallery title={product.title_en} />
+              <ImageGallery title={product.title_en} image_urls={product.image_urls} />
 
               <PullQuote quote={product.subtitle_en || "An excellent choice."} rating={product.rating || 5} />
 

@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import RatingStars from './RatingStars';
 import Badge from './Badge';
 import type { Product } from '@/lib/supabase/types';
@@ -11,7 +12,7 @@ type Props = {
 };
 
 export default function ProductCard({ product }: Props) {
-  const { slug, title_en, subtitle_en, price_usd, rating, pros, badge, category } = product;
+  const { slug, title_en, subtitle_en, price_usd, rating, pros, badge, category, image_urls } = product;
 
   // 장점 태그는 최대 2개
   const proTags = (pros ?? []).slice(0, 2);
@@ -41,7 +42,7 @@ export default function ProductCard({ product }: Props) {
           overflow: 'hidden',
         }}
       >
-        {/* 이미지 플레이스홀더 */}
+        {/* 이미지 플레이스홀더 또는 실제 이미지 */}
         <div
           style={{
             position: 'absolute',
@@ -54,10 +55,20 @@ export default function ProductCard({ product }: Props) {
             transition: 'transform 0.3s ease',
           }}
           className="card-img"
-          role="img"
-          aria-label={title_en}
+          role={image_urls?.[0] ? undefined : "img"}
+          aria-label={image_urls?.[0] ? undefined : title_en}
         >
-          {category?.slug === 'tech' ? '🎧' : '✨'}
+          {image_urls && image_urls[0] ? (
+            <Image 
+              src={image_urls[0]} 
+              fill 
+              alt={title_en} 
+              style={{ objectFit: 'cover' }} 
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" 
+            />
+          ) : (
+            category?.slug === 'tech' ? '🎧' : '✨'
+          )}
         </div>
 
         {/* 카테고리 배지 — 좌상단 */}
