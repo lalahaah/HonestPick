@@ -4,6 +4,7 @@ import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
+import { GoogleAnalytics } from '@next/third-parties/google';
 import "../globals.css";
 
 // design.md §2: 디스플레이(H1~H3)용 — 에디토리얼 무게감
@@ -65,6 +66,7 @@ export default async function LocaleLayout({ children, modal, params }: Props) {
           {children}
           {modal}
         </NextIntlClientProvider>
+        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID!} />
       </body>
     </html>
   );
