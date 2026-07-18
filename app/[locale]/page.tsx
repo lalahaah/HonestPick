@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     title: "HonestPick — Honest Product Reviews You Can Trust",
     description:
       "Real testing. Honest reviews. Smarter buying decisions.",
-    url: "https://honestpickhq.com/en",
+    url: `${process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"}/en`,
   },
 };
 

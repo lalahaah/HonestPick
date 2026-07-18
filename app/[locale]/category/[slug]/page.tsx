@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       title: `${category.name_en} Reviews | HonestPick`,
       description: `Honest, hands-on reviews of the best ${category.name_en}.`,
-      url: `https://honestpickhq.com/en/category/${slug}`,
+      url: `${process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"}/en/category/${slug}`,
     },
   };
 }

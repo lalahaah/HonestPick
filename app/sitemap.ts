@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next';
 import { getAllProductSlugs, getAllCategorySlugs } from '@/lib/queries';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = 'https://honestpickhq.com'; // as defined in AGENTS.md
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'; // as defined in AGENTS.md
 
   const productSlugs = await getAllProductSlugs();
   const products = productSlugs.map((slug) => ({

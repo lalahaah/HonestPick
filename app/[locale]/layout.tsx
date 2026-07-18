@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   },
   description:
     "In-depth, hands-on product reviews based on real-world testing. No paid placements, no sponsored content — just honest picks to help you buy smarter.",
-  metadataBase: new URL("https://honestpickhq.com"),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"),
   openGraph: {
     siteName: "HonestPick",
     locale: "en_US",

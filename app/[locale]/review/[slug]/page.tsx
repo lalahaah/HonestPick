@@ -32,7 +32,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       title: `${product.title_en} Review | HonestPick`,
       description: product.subtitle_en || `Honest review of ${product.title_en}.`,
-      url: `https://honestpickhq.com/en/review/${slug}`,
+      url: `${process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"}/en/review/${slug}`,
       images: product.image_urls?.[0] ? [{ url: product.image_urls[0] }] : [],
     },
   };
